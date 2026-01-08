@@ -43,4 +43,25 @@ export class RegisterUserPage {
         .should("be.visible")
         .and("contain.text", "Este é seu sistema para administrar seu ecommerce.")
   }
+
+  //validar tentativa de cadastro de usuário sem nome
+  static validateNomeObrigatorio() {
+    cy.get('.alert > :nth-child(2)')
+        .should("be.visible")
+        .and("contain.text", "Nome é obrigatório")
+  }
+
+  //validar tentativa de cadastro de usuário sem email
+  static validateEmailObrigatorio() {
+    cy.get('.alert > :nth-child(2)')
+        .should("be.visible")
+        .and("contain.text", "Email é obrigatório")
+  }
+
+  //validar tentativa de cadastro de usuário sem senha
+  static validateSenhaObrigatorio() {
+    cy.get('.alert > :nth-child(2)')
+        .should("be.visible")
+        .and("contain.text", "Password é obrigatório")
+  }
 }
