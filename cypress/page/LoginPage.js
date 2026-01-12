@@ -6,8 +6,8 @@ export class LoginPage {
   }
 
   //preencher "Digite sua senha" 
-  static fillSenha(nome) {
-    cy.get('[data-testid="senha"]').type(nome)
+  static fillSenha(senha) {
+    cy.get('[data-testid="senha"]').type(senha)
   }
 
   //clicar em Entrar, para efetuar o Login

@@ -9,7 +9,7 @@ describe('Login', () => {
       cy.visit('/');
   })
 
-  it('Login Sucess with Administrator User', () => {
+  it.only('Login Sucess with Administrator User', () => {
     
     LoginPage.fillEmail(email);
     LoginPage.fillSenha(senha);
