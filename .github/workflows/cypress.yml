@@ -1,0 +1,29 @@
+name: Cypress Tests
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do projeto
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Rodar testes Cypress
+        run: npx cypress run
+        env:
+          CYPRESS_EMAIL_USER_VALID: ${{ secrets.EMAIL_USER_VALID }}
+          CYPRESS_SENHA_USER_VALID: ${{ secrets.SENHA_USER_VALID }}
