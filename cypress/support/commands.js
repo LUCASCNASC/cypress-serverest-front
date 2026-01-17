@@ -1,3 +1,5 @@
+import 'cypress-file-upload';
+
 Cypress.Commands.add('login', (email, senha) => { 
 
   cy.get('[data-testid="email"]').type(email)
