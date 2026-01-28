@@ -1,33 +1,54 @@
 import { LoginPage } from '../page/LoginPage';
 
-const email = Cypress.env('EMAIL_USER_VALID');
-const senha = Cypress.env('SENHA_USER_VALID');
+describe('Login - Administrator User', () => {
 
-describe('Login', () => {
+  let usuario
 
-  beforeEach(() => {
-      cy.visit('/');
+  before(() => {
+    const email = `admin_${Date.now()}@qa.com`
+
+    cy.request({
+      method: 'POST',
+      url: 'https://serverest.dev/usuarios',
+      body: {
+        nome: 'Administrador QA',
+        email: email,
+        password: '123456',
+        administrador: 'true'
+      }
+    }).then((response) => {
+      expect(response.status).to.eq(201)
+
+      usuario = {
+        email: email,
+        password: '123456'
+      }
+    })
   })
 
-  it.only('Login Sucess with Administrator User', () => {
-    
-    LoginPage.fillEmail(email);
-    LoginPage.fillSenha(senha);
-    LoginPage.clickEntrar();
-    LoginPage.validateLoginSucess();
+  beforeEach(() => {
+    cy.visit('/')
+  })
+
+  it('Login Administrator User with success', () => {
+
+    LoginPage.fillEmail(usuario.email)
+    LoginPage.fillSenha(usuario.password)
+    LoginPage.clickEntrar()
+    LoginPage.validateLoginSucess()
   })
 
   it('Try to Login Administrator User without Email', () => {
-    
-    LoginPage.fillSenha(senha);
-    LoginPage.clickEntrar();
-    LoginPage.validateEmailObrigatorio();
+
+    LoginPage.fillSenha(usuario.password)
+    LoginPage.clickEntrar()
+    LoginPage.validateEmailObrigatorio()
   })
 
   it('Try to Login Administrator User without Senha', () => {
-    
-    LoginPage.fillEmail(email);
-    LoginPage.clickEntrar();
-    LoginPage.validateSenhaObrigatorio();
+
+    LoginPage.fillEmail(usuario.email)
+    LoginPage.clickEntrar()
+    LoginPage.validateSenhaObrigatorio()
   })
 })

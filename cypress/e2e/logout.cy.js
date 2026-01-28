@@ -1,18 +1,14 @@
-import { LogoutPage } from '../page/LogoutPage';
+import { LogoutPage } from '../page/LogoutPage'
 
 describe('Logout', () => {
 
   beforeEach(() => {
-      cy.visit('/');
-      cy.login(
-        Cypress.env('EMAIL_USER_VALID'),
-        Cypress.env('SENHA_USER_VALID')
-      );
+    const user = Cypress.env('USUARIO_GLOBAL')
+    cy.loginUI(user.email, user.password)
   })
 
-  it('Logout sucess', () => {
-    
-    LogoutPage.clickLogout();
-    LogoutPage.validateLogout();
+  it('Logout success', () => {
+    LogoutPage.clickLogout()
+    LogoutPage.validateLogout()
   })
 })
