@@ -42,5 +42,10 @@ export class CadastrarProdutoPage {
   static validateNewProduct() {
     cy.contains('Lista dos Produtos').should('be.visible')
   }
+
+  //validar mensagem de erro ao tentar cadastrar produto sem nome
+  static validateNameObrigario() {
+    cy.contains('Nome é obrigatório').should('be.visible')
+  }
   
 }

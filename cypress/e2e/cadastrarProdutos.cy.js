@@ -1,24 +1,30 @@
 import { faker } from '@faker-js/faker';
+import { createUser } from '../services/user.service';
 import { CadastrarProdutoPage } from '../page/CadastrarProdutoPage';
 
 describe('Register product', () => {
 
+  let produto;
+
+  before(() => {
+      createUser().then((user) => {
+        Cypress.env('USUARIO_GLOBAL', user)
+        cy.log('Usuário global criado: ' + JSON.stringify(user))
+      })
+    })
+  
   beforeEach(() => {
-      cy.visit('/');
-      cy.login(
-        Cypress.env('EMAIL_USER_VALID'),
-        Cypress.env('SENHA_USER_VALID')
-      );
-  })
+    cy.loginUI()
 
-  it('Register product sucess', () => {
-
-    const produto = {
+    produto = {
       nome: faker.commerce.productName(),
       preco: faker.number.int({ min: 10, max: 1000 }),
       descricao: faker.commerce.productDescription(),
       quantidade: faker.number.int({ min: 1, max: 50 })
     }
+})
+
+  it('Register product sucess', () => {
 
     CadastrarProdutoPage.clickCadastrarProdutos();
     CadastrarProdutoPage.fillNome(produto.nome);
@@ -28,5 +34,16 @@ describe('Register product', () => {
     CadastrarProdutoPage.attachFile();
     CadastrarProdutoPage.clickConfirmCadastro();
     CadastrarProdutoPage.validateNewProduct();
+  })
+
+  it('To try Register product without Nome', () => {
+
+    CadastrarProdutoPage.clickCadastrarProdutos();
+    CadastrarProdutoPage.fillPreco(produto.preco);
+    CadastrarProdutoPage.fillDescricao(produto.descricao);
+    CadastrarProdutoPage.fillQuantidade(produto.quantidade);
+    CadastrarProdutoPage.attachFile();
+    CadastrarProdutoPage.clickConfirmCadastro();
+    CadastrarProdutoPage.validateNameObrigario();
   })
 })

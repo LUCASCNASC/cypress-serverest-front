@@ -44,15 +44,20 @@ Cypress.Commands.add('loginViaAPI', (email, password) => {
   })
 })
 
-Cypress.Commands.add('loginUI', (email, password) => {
-  cy.session([email, password], () => {
-    cy.visit('/login')
+Cypress.Commands.add('loginUI', () => {
+  const user = Cypress.env('USUARIO_GLOBAL')
 
-    cy.get('[data-testid="email"]').type(email)
-    cy.get('[data-testid="senha"]').type(password)
-    cy.get('[data-testid="entrar"]').click()
+  cy.log('Login com: ' + JSON.stringify(user))
 
-    cy.url().should('include', '/home')
-    cy.get('[data-testid="logout"]').should('be.visible')
-  })
+  expect(user).to.not.be.undefined
+  expect(user.email).to.exist
+  expect(user.password).to.exist
+
+  cy.visit('/login')
+
+  cy.get('[data-testid="email"]').type(user.email)
+  cy.get('[data-testid="senha"]').type(user.password)
+  cy.get('[data-testid="entrar"]').click()
+
+  cy.url().should('not.include', '/login')
 })
