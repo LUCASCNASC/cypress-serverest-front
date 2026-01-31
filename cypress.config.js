@@ -7,7 +7,6 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
 
       supportFile: 'cypress/support/e2e.js',
-      // Tornar variáveis disponíveis no Cypress
       config.env.EMAIL_USER_VALID = process.env.EMAIL_USER_VALID
       config.env.SENHA_USER_VALID = process.env.SENHA_USER_VALID
 

@@ -47,5 +47,4 @@ export class CadastrarProdutoPage {
   static validateNameObrigario() {
     cy.contains('Nome é obrigatório').should('be.visible')
   }
-  
 }

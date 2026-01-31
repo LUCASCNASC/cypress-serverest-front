@@ -23,6 +23,7 @@ Cypress.Commands.add('criarUsuarioGlobal', () => {
   }).then(() => ({ email, password: '123456' }))
 })
 
+//comando personalizado para login via API
 Cypress.Commands.add('loginViaAPI', (email, password) => {
   cy.request({
     method: 'POST',
@@ -44,6 +45,7 @@ Cypress.Commands.add('loginViaAPI', (email, password) => {
   })
 })
 
+//comando personalizado para login via UI, utilizando usuario global definido em cypress.env.json
 Cypress.Commands.add('loginUI', () => {
   const user = Cypress.env('USUARIO_GLOBAL')
 
