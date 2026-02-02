@@ -46,4 +46,15 @@ describe('Register product', () => {
     CadastrarProdutoPage.clickConfirmCadastro();
     CadastrarProdutoPage.validateNameObrigario();
   })
+
+  it('To try Register product without Preco', () => {
+
+    CadastrarProdutoPage.clickCadastrarProdutos();
+    CadastrarProdutoPage.fillNome(produto.nome);
+    CadastrarProdutoPage.fillDescricao(produto.descricao);
+    CadastrarProdutoPage.fillQuantidade(produto.quantidade);
+    CadastrarProdutoPage.attachFile();
+    CadastrarProdutoPage.clickConfirmCadastro();
+    CadastrarProdutoPage.validatePrecoObrigario();
+  })
 })

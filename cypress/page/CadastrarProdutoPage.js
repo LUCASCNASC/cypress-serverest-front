@@ -47,4 +47,9 @@ export class CadastrarProdutoPage {
   static validateNameObrigario() {
     cy.contains('Nome é obrigatório').should('be.visible')
   }
+
+  //validar mensagem de erro ao tentar cadastrar produto sem preço
+  static validatePrecoObrigario() {
+    cy.contains('Preco é obrigatório').should('be.visible')
+  }
 }
