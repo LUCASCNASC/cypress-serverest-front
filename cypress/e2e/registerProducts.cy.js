@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { createUser } from '../services/user.service';
-import { CadastrarProdutoPage } from '../page/CadastrarProdutoPage';
+import { RegisterProductPage } from '../page/RegisterProductPage';
 
 describe('Register product', () => {
 
@@ -26,35 +26,57 @@ describe('Register product', () => {
 
   it('Register product sucess', () => {
 
-    CadastrarProdutoPage.clickCadastrarProdutos();
-    CadastrarProdutoPage.fillNome(produto.nome);
-    CadastrarProdutoPage.fillPreco(produto.preco);
-    CadastrarProdutoPage.fillDescricao(produto.descricao);
-    CadastrarProdutoPage.fillQuantidade(produto.quantidade);
-    CadastrarProdutoPage.attachFile();
-    CadastrarProdutoPage.clickConfirmCadastro();
-    CadastrarProdutoPage.validateNewProduct();
+    RegisterProductPage.clickCadastrarProdutos();
+    RegisterProductPage.fillNome(produto.nome);
+    RegisterProductPage.fillPreco(produto.preco);
+    RegisterProductPage.fillDescricao(produto.descricao);
+    RegisterProductPage.fillQuantidade(produto.quantidade);
+    RegisterProductPage.attachFile();
+    RegisterProductPage.clickConfirmCadastro();
+    RegisterProductPage.validateNewProduct();
   })
 
   it('To try Register product without Nome', () => {
 
-    CadastrarProdutoPage.clickCadastrarProdutos();
-    CadastrarProdutoPage.fillPreco(produto.preco);
-    CadastrarProdutoPage.fillDescricao(produto.descricao);
-    CadastrarProdutoPage.fillQuantidade(produto.quantidade);
-    CadastrarProdutoPage.attachFile();
-    CadastrarProdutoPage.clickConfirmCadastro();
-    CadastrarProdutoPage.validateNameObrigario();
+    RegisterProductPage.clickCadastrarProdutos();
+    RegisterProductPage.fillPreco(produto.preco);
+    RegisterProductPage.fillDescricao(produto.descricao);
+    RegisterProductPage.fillQuantidade(produto.quantidade);
+    RegisterProductPage.attachFile();
+    RegisterProductPage.clickConfirmCadastro();
+    RegisterProductPage.validateNameObrigario();
   })
 
   it('To try Register product without Preco', () => {
 
-    CadastrarProdutoPage.clickCadastrarProdutos();
-    CadastrarProdutoPage.fillNome(produto.nome);
-    CadastrarProdutoPage.fillDescricao(produto.descricao);
-    CadastrarProdutoPage.fillQuantidade(produto.quantidade);
-    CadastrarProdutoPage.attachFile();
-    CadastrarProdutoPage.clickConfirmCadastro();
-    CadastrarProdutoPage.validatePrecoObrigario();
+    RegisterProductPage.clickCadastrarProdutos();
+    RegisterProductPage.fillNome(produto.nome);
+    RegisterProductPage.fillDescricao(produto.descricao);
+    RegisterProductPage.fillQuantidade(produto.quantidade);
+    RegisterProductPage.attachFile();
+    RegisterProductPage.clickConfirmCadastro();
+    RegisterProductPage.validatePrecoObrigario();
+  })
+
+  it('To try Register product without Descrição', () => {
+
+    RegisterProductPage.clickCadastrarProdutos();
+    RegisterProductPage.fillNome(produto.nome);
+    RegisterProductPage.fillPreco(produto.preco);
+    RegisterProductPage.fillQuantidade(produto.quantidade);
+    RegisterProductPage.attachFile();
+    RegisterProductPage.clickConfirmCadastro();
+    RegisterProductPage.validateDescricaoObrigaria();
+  })
+
+  it('To try Register product without Quantidade', () => {
+
+    RegisterProductPage.clickCadastrarProdutos();
+    RegisterProductPage.fillNome(produto.nome);
+    RegisterProductPage.fillPreco(produto.preco);
+    RegisterProductPage.fillDescricao(produto.descricao);
+    RegisterProductPage.attachFile();
+    RegisterProductPage.clickConfirmCadastro();
+    RegisterProductPage.validateQuantidadeObrigaria();
   })
 })

@@ -1,4 +1,4 @@
-export class CadastrarProdutoPage {
+export class RegisterProductPage {
 
   //clicar no botão Cadastrar Produtos após logar
   static clickCadastrarProdutos() {
@@ -51,5 +51,15 @@ export class CadastrarProdutoPage {
   //validar mensagem de erro ao tentar cadastrar produto sem preço
   static validatePrecoObrigario() {
     cy.contains('Preco é obrigatório').should('be.visible')
+  }
+
+  //validar mensagem de erro ao tentar cadastrar produto sem descrição
+  static validateDescricaoObrigaria() {
+    cy.contains('Descricao é obrigatório').should('be.visible')
+  }
+
+  //validar mensagem de erro ao tentar cadastrar produto sem quantidade
+  static validateQuantidadeObrigaria() {
+    cy.contains('Quantidade é obrigatório').should('be.visible')
   }
 }
