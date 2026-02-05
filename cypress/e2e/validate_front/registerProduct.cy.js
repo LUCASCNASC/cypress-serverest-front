@@ -1,5 +1,5 @@
 import { createUser } from '../../services/user.service';
-import { CadastrarProdutoPage } from '../../page/CadastrarProdutoPage';
+import { RegisterProductPage } from '../../page/RegisterProductPage';
 
 describe('validate register product page', () => {
 
@@ -12,7 +12,7 @@ describe('validate register product page', () => {
   
   beforeEach(() => {
     cy.loginUI()
-    CadastrarProdutoPage.clickCadastrarProdutos();
+    RegisterProductPage.clickCadastrarProdutos();
 })
 
   it('validate register product page', () => {
