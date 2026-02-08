@@ -158,4 +158,16 @@ describe('Register product', () => {
     RegisterProductPage.validateDescricaoObrigaria();
     RegisterProductPage.validateQuantidadeObrigaria();
   })
+
+  it('To try Register product without Nome, Descrição and Quantidade', () => {
+
+    RegisterProductPage.clickCadastrarProdutos();
+    RegisterProductPage.fillPreco(produto.preco);
+    RegisterProductPage.attachFile();
+    RegisterProductPage.clickConfirmCadastro();
+    RegisterProductPage.validateNameObrigario();
+    RegisterProductPage.validateDescricaoObrigaria();
+    RegisterProductPage.validateQuantidadeObrigaria();
+  })
+
 })
