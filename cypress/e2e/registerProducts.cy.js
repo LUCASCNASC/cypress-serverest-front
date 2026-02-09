@@ -146,8 +146,6 @@ describe('Register product', () => {
     RegisterProductPage.validateDescricaoObrigaria();
   })
 
-  
-
   it('To try Register product without Preco, Descrição and Quantidade', () => {
 
     RegisterProductPage.clickCadastrarProdutos();
@@ -168,6 +166,28 @@ describe('Register product', () => {
     RegisterProductPage.validateNameObrigario();
     RegisterProductPage.validateDescricaoObrigaria();
     RegisterProductPage.validateQuantidadeObrigaria();
+  })
+
+  it('To try Register product without Nome, Preço and Quantidade', () => {
+
+    RegisterProductPage.clickCadastrarProdutos();
+    RegisterProductPage.fillDescricao(produto.descricao);
+    RegisterProductPage.attachFile();
+    RegisterProductPage.clickConfirmCadastro();
+    RegisterProductPage.validateNameObrigario();
+    RegisterProductPage.validatePrecoObrigario();
+    RegisterProductPage.validateQuantidadeObrigaria();
+  })
+
+  it('To try Register product without Nome, Preço and Descrição', () => {
+
+    RegisterProductPage.clickCadastrarProdutos();
+    RegisterProductPage.fillQuantidade(produto.quantidade);
+    RegisterProductPage.attachFile();
+    RegisterProductPage.clickConfirmCadastro();
+    RegisterProductPage.validateNameObrigario();
+    RegisterProductPage.validatePrecoObrigario();
+    RegisterProductPage.validateDescricaoObrigaria();
   })
 
 })
