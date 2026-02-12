@@ -1,6 +1,6 @@
 export class ListProductsPage {
 
-  //clicar no botão Cadastrar Produtos após logar
+  //clicar no botão Listar Produtos após logar
   static clickListarProdutos() {
     cy.get('[data-testid="listar-produtos"]').click();
     
