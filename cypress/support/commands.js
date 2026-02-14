@@ -12,7 +12,7 @@ Cypress.Commands.add('login', (email, senha) => {
  })
 
 //comando personalizado para criar usuario via API, para ser usado em testes que necessitam de um usuario novo
-Cypress.Commands.add('criarUsuarioGlobal', () => {
+Cypress.Commands.add('criarUsuarioGlobalAdm', () => {
   const email = `global_${Date.now()}@qa.com`
 
   return cy.request('POST', 'https://serverest.dev/usuarios', {
@@ -45,9 +45,28 @@ Cypress.Commands.add('loginViaAPI', (email, password) => {
   })
 })
 
-//comando personalizado para login via UI, utilizando usuario global definido em cypress.env.json
-Cypress.Commands.add('loginUI', () => {
-  const user = Cypress.env('USUARIO_GLOBAL')
+//comando personalizado para login via UI, utilizando usuario global Admin definido em cypress.env.json
+Cypress.Commands.add('loginUIAdmin', () => {
+  const user = Cypress.env('USUARIO_GLOBAL_ADM')
+
+  cy.log('Login com: ' + JSON.stringify(user))
+
+  expect(user).to.not.be.undefined
+  expect(user.email).to.exist
+  expect(user.password).to.exist
+
+  cy.visit('/login')
+
+  cy.get('[data-testid="email"]').type(user.email)
+  cy.get('[data-testid="senha"]').type(user.password)
+  cy.get('[data-testid="entrar"]').click()
+
+  cy.url().should('not.include', '/login')
+})
+
+//comando personalizado para login via UI, utilizando usuario global Normal definido em cypress.env.json
+Cypress.Commands.add('loginUINormal', () => {
+  const user = Cypress.env('USUARIO_GLOBAL_NORMAL')
 
   cy.log('Login com: ' + JSON.stringify(user))
 

@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { createUser } from '../services/user.service';
+import { createUserAdm } from '../services/user.service';
 import { RegisterProductPage } from '../page/RegisterProductPage';
 
 describe('Register product', () => {
@@ -7,14 +7,14 @@ describe('Register product', () => {
   let produto;
 
   before(() => {
-      createUser().then((user) => {
-        Cypress.env('USUARIO_GLOBAL', user)
+      createUserAdm().then((user) => {
+        Cypress.env('USUARIO_GLOBAL_ADM', user)
         cy.log('Usuário global criado: ' + JSON.stringify(user))
       })
     })
   
   beforeEach(() => {
-    cy.loginUI()
+    cy.loginUIAdmin()
 
     produto = {
       nome: faker.commerce.productName(),

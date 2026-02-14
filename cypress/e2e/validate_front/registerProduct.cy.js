@@ -1,17 +1,17 @@
-import { createUser } from '../../services/user.service';
+import { createUserAdm } from '../../services/user.service';
 import { RegisterProductPage } from '../../page/RegisterProductPage';
 
 describe('validate register product page', () => {
 
   before(() => {
-      createUser().then((user) => {
-        Cypress.env('USUARIO_GLOBAL', user)
+      createUserAdm().then((user) => {
+        Cypress.env('USUARIO_GLOBAL_ADM', user)
         cy.log('Usuário global criado: ' + JSON.stringify(user))
       })
     })
   
   beforeEach(() => {
-    cy.loginUI()
+    cy.loginUIAdmin()
     RegisterProductPage.clickCadastrarProdutos();
 })
 
@@ -138,6 +138,5 @@ describe('validate register product page', () => {
         // .and("have.value", "")
 
   })
-
   
 })

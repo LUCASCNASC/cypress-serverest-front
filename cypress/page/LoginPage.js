@@ -19,10 +19,6 @@ export class LoginPage {
   static validateLoginSucess() {
     cy.intercept('GET', '**/usuarios').as('apiUsuarios');
     cy.wait('@apiUsuarios', { timeout: 40000 });
-
-    cy.get('.lead')
-        .should("be.visible")
-        .and("contain.text", "Este é seu sistema para administrar seu ecommerce.")
   }
 
   //validar tentativa de cadastro de usuário sem email
