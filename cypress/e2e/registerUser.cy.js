@@ -1,11 +1,11 @@
 import { RegisterUserPage } from '../page/RegisterUserPage';
-import { faker } from '@faker-js/faker'
+import { faker } from '@faker-js/faker';
 
 describe('Register', () => {
 
-  const nome = faker.person.fullName()
-  const email = faker.internet.email().toLowerCase()
-  const senha = faker.internet.password({ length: 8 })
+  const nome = faker.person.fullName();
+  const email = faker.internet.email().toLowerCase();
+  const senha = faker.internet.password({ length: 8 });
 
   beforeEach(() => {
       cy.visit('/');

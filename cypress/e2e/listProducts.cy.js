@@ -6,23 +6,18 @@ describe('List products', () => {
 
   before(() => {
       createUserAdm().then((user) => {
-        Cypress.env('USUARIO_GLOBAL_ADM', user)
-        cy.log('Usuário global criado: ' + JSON.stringify(user))
+        Cypress.env('USUARIO_GLOBAL_ADM', user);
+        cy.log('Usuário global criado: ' + JSON.stringify(user));
       })
     })
   
   beforeEach(() => {
-    cy.loginUIAdmin()
+    cy.loginUIAdmin();
 })
 
   it('List products', () => {
-
     ListProductsPage.clickListarProdutos();
-    ListProductsPage.validateColumns();
-
-    
+    ListProductsPage.validateColumns();  
   })
-
- 
 
 })

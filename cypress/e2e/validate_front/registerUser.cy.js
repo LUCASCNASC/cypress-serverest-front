@@ -1,23 +1,23 @@
 describe('validate register user page', () => {
 
   beforeEach(() => {
-    cy.visit('/')
+    cy.visit('/');
   })
 
   it('validate register user page', () => {
 
     //entrar na tela de cadastro
     cy.get('[data-testid="cadastrar"]')
-      .click()
+      .click();
 
     //imagem SERVEREST
     cy.get('.imagem')
-        .should("be.visible")
+        .should("be.visible");
 
     //titulo Login
     cy.get('.font-robot')
         .should("be.visible")
-        .and("contain.text", "Cadastro")
+        .and("contain.text", "Cadastro");
 
     //campo Digite seu nome
     cy.get('[data-testid="nome"]')
@@ -27,7 +27,7 @@ describe('validate register user page', () => {
         .type("teste")
         .should("have.value", "teste")
         .clear()
-        .and("have.value", "")
+        .and("have.value", "");
 
     //campo Digite seu email
     cy.get('[data-testid="email"]')
@@ -37,7 +37,7 @@ describe('validate register user page', () => {
         .type("teste")
         .should("have.value", "teste")
         .clear()
-        .and("have.value", "")
+        .and("have.value", "");
 
     //campo Digite sua senha
     cy.get('[data-testid="password"]')
@@ -47,35 +47,35 @@ describe('validate register user page', () => {
         .type("teste")
         .should("have.value", "teste")
         .clear()
-        .and("have.value", "")
+        .and("have.value", "");
 
     //validar check box 
     cy.get('[data-testid="checkbox"]')
       .should('be.visible')
-      .and('not.be.checked')
+      .and('not.be.checked');
 
-    cy.get('[data-testid="checkbox"]').check().should('be.checked')
+    cy.get('[data-testid="checkbox"]')
+        .check()
+        .should('be.checked');
 
     //validar botão "Cadastrar"
     cy.get('[data-testid="cadastrar"]')
         .should('have.css', 'background-color', 'rgb(96, 57, 133)')
         .and("be.visible")
         .and("not.be.disabled")
-        .and('have.text', 'Cadastrar')
+        .and('have.text', 'Cadastrar');
 
     //validar texto "Já é cadastrado?"
     cy.get('.message')
         .should("be.visible")
-        .and("contain.text", "Já é cadastrado?")
+        .and("contain.text", "Já é cadastrado?");
 
     //validar botão "Entrar"
     cy.get('[data-testid="entrar"]')
         .should("be.visible")
         .and('not.be.disabled')
         .and('have.text', 'Entrar')
-        .and('have.css', 'color', 'rgb(96, 57, 133)')
-
-    
+        .and('have.css', 'color', 'rgb(96, 57, 133)');
   })
   
 })
