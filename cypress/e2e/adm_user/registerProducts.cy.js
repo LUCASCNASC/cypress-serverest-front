@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
-import { createUserAdm } from '../services/user.service';
-import { RegisterProductPage } from '../page/RegisterProductPage';
+import { createUserAdm } from '../../services/user.service';
+import { RegisterProductPage } from '../../page/RegisterProductPage';
 
 describe('Register product', () => {
 

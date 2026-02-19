@@ -1,8 +1,8 @@
 import { faker } from '@faker-js/faker';
-import { createUserAdm } from '../services/user.service';
-import { ListUsersPage } from '../page/ListUsersPage';
+import { createUserAdm } from '../../services/user.service';
+import { ListProductsPage } from '../../page/ListProductsPage';
 
-describe('List users', () => {
+describe('List products', () => {
 
   before(() => {
       createUserAdm().then((user) => {
@@ -15,9 +15,9 @@ describe('List users', () => {
     cy.loginUIAdmin();
 })
 
-  it('List users', () => {
-    ListUsersPage.clickListarUsuarios();
-    ListUsersPage.validateColumns();    
+  it('List products', () => {
+    ListProductsPage.clickListarProdutos();
+    ListProductsPage.validateColumns();  
   })
 
 })

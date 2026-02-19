@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
-import { createUserAdm } from '../services/user.service';
-import { ReportsPage } from '../page/ReportsPage';
+import { createUserAdm } from '../../services/user.service';
+import { ReportsPage } from '../../page/ReportsPage';
 
 describe('Relatórios', () => {
 
