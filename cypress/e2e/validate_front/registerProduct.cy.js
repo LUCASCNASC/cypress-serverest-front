@@ -1,14 +1,6 @@
-import { createUserAdm } from '../../services/user.service';
 import { RegisterProductPage } from '../../page/RegisterProductPage';
 
 describe('validate register product page', () => {
-
-  before(() => {
-      createUserAdm().then((user) => {
-        Cypress.env('USUARIO_GLOBAL_ADM', user);
-        cy.log('Usuário global criado: ' + JSON.stringify(user));
-      })
-    })
   
   beforeEach(() => {
     cy.loginUIAdmin();
