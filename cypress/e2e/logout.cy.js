@@ -7,6 +7,7 @@ describe('Logout', () => {
   })
 
   it('Logout admin user success', () => {
+
     LogoutPage.clickLogout();
     LogoutPage.validateLogout();
   })
