@@ -8,7 +8,6 @@ describe('List products', () => {
   })
 
   it('List products', () => {
-    
     ListProductsPage.clickListarProdutos();
     ListProductsPage.validateColumns();  
   })
