@@ -29,6 +29,4 @@ export class ListProductsPage {
     //Coluna Ações
     cy.get('thead > tr > :nth-child(6)').contains('Ações').should('be.visible');
   }
-
-  
 }

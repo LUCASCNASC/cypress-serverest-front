@@ -33,6 +33,5 @@ export class LoginPage {
     cy.get('.alert > :nth-child(2)')
         .should("be.visible")
         .and("contain.text", "Password é obrigatório")
-  }
-  
+  } 
 }

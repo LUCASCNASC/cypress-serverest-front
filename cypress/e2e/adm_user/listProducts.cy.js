@@ -11,5 +11,4 @@ describe('List products', () => {
     ListProductsPage.clickListarProdutos();
     ListProductsPage.validateColumns();  
   })
-
 })

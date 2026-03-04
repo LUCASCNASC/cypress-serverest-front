@@ -26,5 +26,4 @@ export class ListUsersPage {
     //Coluna Ações
     cy.get('thead > tr > :nth-child(5)').contains('Ações').should('be.visible');
   }
-  
 }

@@ -13,7 +13,6 @@ describe('Register', () => {
   })
 
   it('Register Sucess as Administrator', () => {
-    
     RegisterUserPage.fillNome(nome);
     RegisterUserPage.fillEmail(email);
     RegisterUserPage.fillSenha(senha);
@@ -23,7 +22,6 @@ describe('Register', () => {
   })
 
   it('Try to Register without nome', () => {
-
     RegisterUserPage.fillEmail(email);
     RegisterUserPage.fillSenha(senha);
     RegisterUserPage.selectAdministrador();
@@ -32,7 +30,6 @@ describe('Register', () => {
   })
 
   it('Try to Register without email', () => {
-
     RegisterUserPage.fillNome(nome);
     RegisterUserPage.fillSenha(senha);
     RegisterUserPage.selectAdministrador();
@@ -41,7 +38,6 @@ describe('Register', () => {
   })
 
   it('Try to Register without senha', () => {
-
     RegisterUserPage.fillNome(nome);
     RegisterUserPage.fillEmail(email);
     RegisterUserPage.selectAdministrador();

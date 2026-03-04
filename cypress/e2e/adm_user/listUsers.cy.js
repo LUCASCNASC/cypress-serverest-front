@@ -11,5 +11,4 @@ describe('List users', () => {
     ListUsersPage.clickListarUsuarios();
     ListUsersPage.validateColumns();    
   })
-
 })

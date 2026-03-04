@@ -50,7 +50,6 @@ describe('Login - Administrator User', () => {
   })
 
   it('Login Administrator User with success', () => {
-
     LoginPage.fillEmail(usuario_admin.email);
     LoginPage.fillSenha(usuario_admin.password);
     LoginPage.clickEntrar();
@@ -58,14 +57,12 @@ describe('Login - Administrator User', () => {
   })
 
   it('Try to Login Administrator User without Email', () => {
-
     LoginPage.fillSenha(usuario_admin.password);
     LoginPage.clickEntrar();
     LoginPage.validateEmailObrigatorio();
   })
 
   it('Try to Login Administrator User without Senha', () => {
-
     LoginPage.fillEmail(usuario_admin.email);
     LoginPage.clickEntrar();
     LoginPage.validateSenhaObrigatorio();

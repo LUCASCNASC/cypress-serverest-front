@@ -17,7 +17,6 @@ describe('Register product', () => {
 })
 
   it('Register product sucess', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillNome(produto.nome);
     RegisterProductPage.fillPreco(produto.preco);
@@ -29,7 +28,6 @@ describe('Register product', () => {
   })
 
   it('To try Register product without Nome', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillPreco(produto.preco);
     RegisterProductPage.fillDescricao(produto.descricao);
@@ -40,7 +38,6 @@ describe('Register product', () => {
   })
 
   it('To try Register product without Preco', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillNome(produto.nome);
     RegisterProductPage.fillDescricao(produto.descricao);
@@ -51,7 +48,6 @@ describe('Register product', () => {
   })
 
   it('To try Register product without Descrição', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillNome(produto.nome);
     RegisterProductPage.fillPreco(produto.preco);
@@ -62,7 +58,6 @@ describe('Register product', () => {
   })
 
   it('To try Register product without Quantidade', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillNome(produto.nome);
     RegisterProductPage.fillPreco(produto.preco);
@@ -73,7 +68,6 @@ describe('Register product', () => {
   })
 
   it('To try Register product without Nome and Preco', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillDescricao(produto.descricao);
     RegisterProductPage.fillQuantidade(produto.quantidade);
@@ -84,7 +78,6 @@ describe('Register product', () => {
   })
 
   it('To try Register product without Nome e Descrição', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillPreco(produto.preco);
     RegisterProductPage.fillQuantidade(produto.quantidade);
@@ -95,7 +88,6 @@ describe('Register product', () => {
   })
 
   it('To try Register product without Nome e Quantidade', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillPreco(produto.preco);
     RegisterProductPage.fillDescricao(produto.descricao);
@@ -106,7 +98,6 @@ describe('Register product', () => {
   })
 
   it('To try Register product without Preço and Descrição', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillNome(produto.nome);
     RegisterProductPage.fillQuantidade(produto.quantidade);
@@ -117,7 +108,6 @@ describe('Register product', () => {
   })
 
   it('To try Register product without Preço and Quantidade', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillNome(produto.nome);
     RegisterProductPage.fillDescricao(produto.descricao);
@@ -128,7 +118,6 @@ describe('Register product', () => {
   })
 
   it('To try Register product without Quantidade and Descrição', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillNome(produto.nome);
     RegisterProductPage.fillPreco(produto.preco);
@@ -139,7 +128,6 @@ describe('Register product', () => {
   })
 
   it('To try Register product without Preco, Descrição and Quantidade', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillNome(produto.nome);
     RegisterProductPage.attachFile();
@@ -150,7 +138,6 @@ describe('Register product', () => {
   })
 
   it('To try Register product without Nome, Descrição and Quantidade', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillPreco(produto.preco);
     RegisterProductPage.attachFile();
@@ -161,7 +148,6 @@ describe('Register product', () => {
   })
 
   it('To try Register product without Nome, Preço and Quantidade', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillDescricao(produto.descricao);
     RegisterProductPage.attachFile();
@@ -172,7 +158,6 @@ describe('Register product', () => {
   })
 
   it('To try Register product without Nome, Preço and Descrição', () => {
-
     RegisterProductPage.clickCadastrarProdutos();
     RegisterProductPage.fillQuantidade(produto.quantidade);
     RegisterProductPage.attachFile();
@@ -181,5 +166,4 @@ describe('Register product', () => {
     RegisterProductPage.validatePrecoObrigario();
     RegisterProductPage.validateDescricaoObrigaria();
   })
-
 })

@@ -77,5 +77,4 @@ describe('validate register user page', () => {
         .and('have.text', 'Entrar')
         .and('have.css', 'color', 'rgb(96, 57, 133)');
   })
-  
 })
