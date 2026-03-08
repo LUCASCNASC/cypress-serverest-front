@@ -44,4 +44,6 @@ describe('Register', () => {
     RegisterUserPage.clickConfirmCadastrar();
     RegisterUserPage.validateSenhaObrigatorio()
   })
+
+  
 })

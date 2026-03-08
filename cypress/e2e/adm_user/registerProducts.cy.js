@@ -166,4 +166,5 @@ describe('Register product', () => {
     RegisterProductPage.validatePrecoObrigario();
     RegisterProductPage.validateDescricaoObrigaria();
   })
+  
 })

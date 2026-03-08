@@ -10,4 +10,5 @@ describe('Logout', () => {
     LogoutPage.clickLogout();
     LogoutPage.validateLogout();
   })
+  
 })

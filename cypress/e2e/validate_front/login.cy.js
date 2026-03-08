@@ -54,4 +54,5 @@ describe('validate login page', () => {
         .and('have.text', 'Cadastre-se')
         .and('have.css', 'color', 'rgb(96, 57, 133)');
   })
+  
 })
