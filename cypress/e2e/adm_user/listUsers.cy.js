@@ -10,6 +10,6 @@ describe('List users', () => {
   it('List users', () => {
     ListUsersPage.clickListarUsuarios();
     ListUsersPage.validateColumns();    
-  })
+  });
   
-})
+});

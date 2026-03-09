@@ -6,5 +6,5 @@ export class ReportsPage {
     
     //validar se a página de Relatórios foi carregada
     cy.get('h1').contains('Em construção aguarde').should('be.visible');
-  }
-}
+  };
+};

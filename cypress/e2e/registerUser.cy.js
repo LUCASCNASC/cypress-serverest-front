@@ -19,7 +19,7 @@ describe('Register', () => {
     RegisterUserPage.selectAdministrador();
     RegisterUserPage.clickConfirmCadastrar();
     RegisterUserPage.validateNewRegister();
-  })
+  });
 
   it('Try to Register without nome', () => {
     RegisterUserPage.fillEmail(email);
@@ -27,7 +27,7 @@ describe('Register', () => {
     RegisterUserPage.selectAdministrador();
     RegisterUserPage.clickConfirmCadastrar();
     RegisterUserPage.validateNomeObrigatorio();
-  })
+  });
 
   it('Try to Register without email', () => {
     RegisterUserPage.fillNome(nome);
@@ -35,7 +35,7 @@ describe('Register', () => {
     RegisterUserPage.selectAdministrador();
     RegisterUserPage.clickConfirmCadastrar();
     RegisterUserPage.validateEmailObrigatorio();
-  })
+  });
 
   it('Try to Register without senha', () => {
     RegisterUserPage.fillNome(nome);
@@ -43,7 +43,6 @@ describe('Register', () => {
     RegisterUserPage.selectAdministrador();
     RegisterUserPage.clickConfirmCadastrar();
     RegisterUserPage.validateSenhaObrigatorio()
-  })
-
+  });
   
-})
+});

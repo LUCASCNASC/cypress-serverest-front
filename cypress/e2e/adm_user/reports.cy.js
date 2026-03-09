@@ -9,6 +9,6 @@ describe('Relatórios', () => {
 
   it('Relatórios', () => {
     ReportsPage.clickRelatorios();
-  })
+  });
   
-})
+});

@@ -2,11 +2,11 @@ import { LoginPage } from '../page/LoginPage';
 
 describe('Login - Administrator User', () => {
 
-  let usuario_admin
-  let usuario_normal
+  let usuario_admin;
+  let usuario_normal;
 
   before(() => {
-    const email = `admin_${Date.now()}@qa.com`
+    const email = `admin_${Date.now()}@qa.com`;
 
     cy.request({
       method: 'POST',
@@ -18,12 +18,12 @@ describe('Login - Administrator User', () => {
         administrador: 'true'
       }
     }).then((response) => {
-      expect(response.status).to.eq(201)
+      expect(response.status).to.eq(201);
 
       usuario_admin = {
         email: email,
         password: '123456'
-      }
+      };
     })
 
     // cy.request({
@@ -47,26 +47,26 @@ describe('Login - Administrator User', () => {
 
   beforeEach(() => {
     cy.visit('/')
-  })
+  });
 
   it('Login Administrator User with success', () => {
     LoginPage.fillEmail(usuario_admin.email);
     LoginPage.fillSenha(usuario_admin.password);
     LoginPage.clickEntrar();
     LoginPage.validateLoginSucess();
-  })
+  });
 
   it('Try to Login Administrator User without Email', () => {
     LoginPage.fillSenha(usuario_admin.password);
     LoginPage.clickEntrar();
     LoginPage.validateEmailObrigatorio();
-  })
+  });
 
   it('Try to Login Administrator User without Senha', () => {
     LoginPage.fillEmail(usuario_admin.email);
     LoginPage.clickEntrar();
     LoginPage.validateSenhaObrigatorio();
-  })
+  });
 
   // it('Login Normal User with success', () => {
 
@@ -75,4 +75,4 @@ describe('Login - Administrator User', () => {
   //   LoginPage.clickEntrar()
   //   LoginPage.validateLoginSucess()
   // })
-})
+});

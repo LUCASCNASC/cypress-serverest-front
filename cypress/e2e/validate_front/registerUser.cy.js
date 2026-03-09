@@ -76,6 +76,6 @@ describe('validate register user page', () => {
         .and('not.be.disabled')
         .and('have.text', 'Entrar')
         .and('have.css', 'color', 'rgb(96, 57, 133)');
-  })
+  });
   
-})
+});

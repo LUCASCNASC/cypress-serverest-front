@@ -2,7 +2,7 @@ export class LogoutPage {
 
   static clickLogout() {
     cy.get('[data-testid="logout"]').should('be.visible').click()
-  }
+  };
 
   static validateLogout() {
     cy.url().should('include', '/login')
@@ -13,5 +13,5 @@ export class LogoutPage {
     cy.window().then(win => {
       expect(win.localStorage.getItem('serverest/userToken')).to.be.null
     })
-  }
-}
+  };
+};

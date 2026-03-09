@@ -6,7 +6,7 @@ export class ListProductsPage {
     
     //validar se a página de Lista de produtos foi carregada
     cy.get('h1').contains('Lista dos Produtos').should('be.visible');
-  }
+  };
 
   //validar colunas na tela de Lista dos Produtos
   static validateColumns() {
@@ -28,5 +28,5 @@ export class ListProductsPage {
 
     //Coluna Ações
     cy.get('thead > tr > :nth-child(6)').contains('Ações').should('be.visible');
-  }
-}
+  };
+};
