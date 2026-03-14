@@ -1,4 +1,3 @@
-import { faker } from '@faker-js/faker';
 import { ListUsersPage } from '../../page/ListUsersPage';
 
 describe('List users', () => {

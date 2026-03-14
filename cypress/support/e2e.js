@@ -43,4 +43,5 @@ before(() => {
   createUserNormal().then((user) => {
     Cypress.env('USUARIO_GLOBAL_NORMAL', user)
   })
+  
 })

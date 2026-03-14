@@ -1,4 +1,3 @@
-import { faker } from '@faker-js/faker';
 import { HomePage } from '../../page/HomePage';
 
 describe('Acess home page', () => {
