@@ -9,5 +9,4 @@ describe('Acess home page', () => {
   it('home page', () => {
     HomePage.clickHome();
   });
-  
 });

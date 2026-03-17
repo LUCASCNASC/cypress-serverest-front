@@ -130,5 +130,4 @@ describe('validate register product page', () => {
         // .and("have.value", "")
 
   });
-  
 });
