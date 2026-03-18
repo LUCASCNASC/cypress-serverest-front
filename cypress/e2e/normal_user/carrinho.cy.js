@@ -9,4 +9,5 @@ describe('Acess menu carrinho', () => {
   it('menu carrinho', () => {
     CarrinhoPage.clickHome();
   });
+  
 });
