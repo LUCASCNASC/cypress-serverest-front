@@ -1,6 +1,6 @@
 import { ListProductsPage } from '../../page/ListProductsPage';
 
-describe('List products', () => {
+describe('List products registered', () => {
   
   beforeEach(() => {
     cy.loginUIAdmin();

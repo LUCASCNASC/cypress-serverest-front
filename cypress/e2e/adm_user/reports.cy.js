@@ -1,12 +1,12 @@
 import { ReportsPage } from '../../page/ReportsPage';
 
-describe('Relatórios', () => {
+describe('Reports', () => {
   
   beforeEach(() => {
     cy.loginUIAdmin();
   })
 
-  it('Relatórios', () => {
+  it('Reports', () => {
     ReportsPage.clickRelatorios();
   });
 
