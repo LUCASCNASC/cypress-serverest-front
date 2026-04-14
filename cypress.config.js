@@ -12,7 +12,6 @@ module.exports = defineConfig({
 
       return config
     },
-
     baseUrl: 'https://front.serverest.dev/'
   },
 });
