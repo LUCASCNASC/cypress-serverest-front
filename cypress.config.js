@@ -14,4 +14,5 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://front.serverest.dev/'
   },
+  
 });
